@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  /* Canvas & Surface Colors */
+  --color-cream-base: #FDFBF7;
+  --color-cream-surface: #F5F1E8;
+  --color-cream-border: #E8E2D5;
+  --color-cream-card-hover: #ECE6D9;
+
+  /* Brand & Action Colors */
+  --color-slate-blue: #4A6C7C;
+  --color-slate-blue-hover: #3B5765;
+  --color-slate-blue-light: #E8EEF1;
+  --color-sage: #7A9A7D;
+  --color-sage-hover: #658368;
+  --color-sage-light: #E9F0E9;
+
+  /* Health & Risk Status Zones */
+  --color-zone-green: #528359;
+  --color-zone-green-bg: #EAF2EB;
+  --color-zone-yellow: #C89B3C;
+  --color-zone-yellow-bg: #FCF6E8;
+  --color-zone-red: #C36055;
+  --color-zone-red-bg: #FDF0EE;
+
+  /* Neutral & Typography */
+  --color-text-main: #2C3338;
+  --color-text-muted: #6B7280;
+  --color-text-inverted: #FFFFFF;
+}
+
+:root {
+  --background: #FDFBF7;
+  --foreground: #2C3338;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-nunito);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a1a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-nunito), Arial, Helvetica, sans-serif;
+}
