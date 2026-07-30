@@ -10,8 +10,7 @@ export default function DashboardPage() {
   const [streak, setStreak] = useState(12);
   const [totalSessions, setTotalSessions] = useState(50);
   const [badgesCount, setBadgesCount] = useState(0);
-  const [alertsCount, setAlertsCount] = useState(2);
-
+  
   // Fetch real user name or email from Supabase session on mount
   useEffect(() => {
     async function getUserSession() {
@@ -75,24 +74,11 @@ export default function DashboardPage() {
             >
               <span>📊</span> Analytics
             </button>
-
-            <button 
-              onClick={() => router.push('/alerts')}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-full text-[#4A6C7C] hover:bg-[#EAE4D9] font-medium text-sm transition-all relative"
-            >
-              <span>🔔</span> Alerts
-              {alertsCount > 0 && (
-                <span className="w-5 h-5 rounded-full bg-[#C36055] text-white text-xs font-bold flex items-center justify-center ml-0.5">
-                  {alertsCount}
-                </span>
-              )}
-            </button>
-
-            <button 
+            <button
               onClick={handleSignOut}
               className="flex items-center gap-2 px-4 py-2.5 rounded-full text-[#4A6C7C] hover:bg-[#EAE4D9] font-medium text-sm transition-all"
             >
-              <span>👤</span> Profile
+              <span>🚪</span> Sign Out
             </button>
           </nav>
         </div>
